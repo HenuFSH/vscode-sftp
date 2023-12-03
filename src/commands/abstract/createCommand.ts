@@ -96,3 +96,4 @@ export function createFileMultiCommand(commandOption: FileCommandOption & { name
     }
   };
 }
+

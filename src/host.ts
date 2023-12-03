@@ -115,6 +115,16 @@ export function registerCommand(
   context.subscriptions.push(disposable);
 }
 
+export function registerTextEditorCommand(
+  context: vscode.ExtensionContext,
+  name: string,
+  callback: (...args: any[]) => any,
+  thisArg?: any
+) {
+  const disposable = vscode.commands.registerTextEditorCommand(name, callback, thisArg);
+  context.subscriptions.push(disposable);
+}
+
 export function addWorkspaceFolder(...workspaceFoldersToAdd: { uri: vscode.Uri; name?: string }[]) {
   return vscode.workspace.updateWorkspaceFolders(0, 0, ...workspaceFoldersToAdd);
 }

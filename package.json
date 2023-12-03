@@ -2,7 +2,7 @@
   "name": "sftp",
   "displayName": "SFTP",
   "description": "SFTP/FTP sync",
-  "version": "1.16.3",
+  "version": "1.16.4",
   "publisher": "Natizyskunk",
   "author": "Natizyskunk <natan.fourie@hotmail.fr> (https://github.com/Natizyskunk)",
   "engines": {
@@ -257,6 +257,11 @@
         "category": "SFTP"
       },
       {
+        "command": "sftp.editor.copylineno",
+        "title": "Copy Line Number",
+        "category": "SFTP"
+      },
+      {
         "command": "sftp.revealInExplorer",
         "title": "Reveal in Explorer",
         "category": "SFTP"
@@ -447,6 +452,11 @@
           "when": "sftp.enabled && !explorerResourceIsRoot"
         },
         {
+          "command": "sftp.openConnectInTerminal",
+          "group": "navigation@29",
+          "when": "sftp.enabled && !explorerResourceIsRoot"
+        },
+        {
           "command": "sftp.diff",
           "group": "3_compare",
           "when": "sftp.enabled && !explorerResourceIsRoot && !explorerResourceIsFolder"
@@ -501,6 +511,16 @@
         }
       ],
       "editor/context": [
+        {
+          "command": "sftp.openConnectInTerminal",
+          "group": "navigation@1",
+          "when": "sftp.enabled && resourceScheme == file"
+        },
+        {
+          "command": "sftp.editor.copylineno",
+          "group": "navigation@2",
+          "when": "sftp.enabled && resourceScheme == file"
+        },
         {
           "command": "sftp.upload.file",
           "group": "sftp.trans@1",

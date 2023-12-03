@@ -201,7 +201,7 @@ export const downloadFile = createFileHandler<TransferOption>({
 export const downloadFolder = createFileHandler<TransferOption>({
   name: 'download folder',
   handle: downloadHandle,
-  transformOption() {
+  transformOption()                                         {
     const config = this.config;
     return {
       perserveTargetMode: false,
